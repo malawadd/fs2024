@@ -12,10 +12,13 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
+    "@fleekhq/fleek-storage-js": "^1.0.24",
+    "@fleekxyz/sdk": "^1.4.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ethers": "^6.12.1",
     "express": "^4.19.2",
-    "readline": "^1.3.0"
+    "readline": "^1.3.0",
+    "screenshot-desktop": "^1.15.0"
   }
 }

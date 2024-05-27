@@ -17,23 +17,17 @@ const screenshot= async() => {
   }
 }
 
-// const conversation = (chat) => {
-//   return new Promise((resolve, reject) => {
-//     api.get(`/conversation?question=${chat}`)
-//       .then(response => {
-//         resolve(response);
-//       })
-//       .catch(error => {
-//         console.error('Error fetching conversation:', error);
-//         reject(error);
-//       });
-//   });
-// }
+
 
 const conversation = (prompt) => {
   return new Promise((resolve, reject) => {
-    console.log(prompt)
-    api.post('/run-command', { prompt })
+    let endpoint = '/run-command';
+    if (prompt.startsWith('/screenshot') || prompt.includes('screenshot')) {
+      endpoint = '/chatwithvision';
+      prompt = prompt.replace('/screenshot', '').trim();
+    }
+    console.log(`Sending to endpoint ${endpoint}: ${prompt}`);
+    api.post(endpoint, { prompt })
       .then(response => {
         resolve(response);
       })
@@ -42,7 +36,7 @@ const conversation = (prompt) => {
         reject(error);
       });
   });
-}
+};
 
 module.exports = {
   screenshot,
