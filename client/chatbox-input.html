@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body style="margin: 0;">
+    <input class="chatbox" id="chatbox" placeholder="Say something ..."></input>
+    <script src="./chatbox-input-renderer.js"></script>
+  </body>
+</html>

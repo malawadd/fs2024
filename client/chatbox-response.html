@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body style="margin: 0;">
+    <canvas id="canvas" width="1000" height="1000" style="cursor: pointer;"></canvas>
+    <div>
+      <img id="dialog" src="assets/dialog.png"/>
+      <img id="dialog-mini" src="assets/dialog-mini.png"/>
+    </div>
+  </body>
+  <script defer src="./chatbox-response-renderer.js"></script>
+</html>
