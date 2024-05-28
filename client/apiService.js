@@ -21,7 +21,7 @@ const screenshot= async() => {
 
 const conversation = (prompt) => {
   return new Promise((resolve, reject) => {
-    let endpoint = '/run-command';
+    let endpoint = '/chat';
     if (prompt.startsWith('/screenshot') || prompt.includes('screenshot')) {
       endpoint = '/chatwithvision';
       prompt = prompt.replace('/screenshot', '').trim();
