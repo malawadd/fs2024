@@ -9,6 +9,7 @@
     "test": "npx hardhat test",
     "whitelist": "npx hardhat run scripts/whitelist.ts --network galadriel",
     "samah": "npx hardhat run scripts/deploySamah.ts --network galadriel",
+    "squid": "npx hardhat run scripts/deploysquidAgent.ts --network galadriel",
     "generateStandardJson": "npx hardhat solidity-json"
   },
   "devDependencies": {
