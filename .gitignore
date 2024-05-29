@@ -9,3 +9,5 @@ backend/wetransfere.js
 backend/screenshot.js
 backend/api.js
 backend/vision.js
+rag_tools/.env
+/rag_tools/venv
