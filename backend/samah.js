@@ -3,6 +3,7 @@ const cors = require('cors');
 const chatwithvision = require('./chatwithvision');
 const chat = require('./chat');
 const squidswap = require('./squidswap');
+const analysis = require('./analysis');
 require('dotenv').config();
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use('/', chatwithvision);
 app.use('/', chat);
 app.use('/', squidswap);
+app.use('/', analysis);
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);

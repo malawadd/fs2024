@@ -30,6 +30,10 @@ const conversation = (prompt) => {
       endpoint = '/squidswap';
       prompt = prompt.replace('/squid', '').trim();
     }
+    if (prompt.startsWith('/analysis')) {
+      endpoint = '/analysis';
+      prompt = prompt.replace('/analysis', '').trim();
+    }
     console.log(`Sending to endpoint ${endpoint}: ${prompt}`);
     api.post(endpoint, { prompt })
       .then(response => {
