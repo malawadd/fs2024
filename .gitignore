@@ -13,3 +13,5 @@ rag_tools/.env
 /rag_tools/venv
 backend/chains.json
 backend/tokens.json
+/backend/test
+backend/chattest.js

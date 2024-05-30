@@ -10,6 +10,7 @@
     "whitelist": "npx hardhat run scripts/whitelist.ts --network galadriel",
     "samah": "npx hardhat run scripts/deploySamah.ts --network galadriel",
     "squid": "npx hardhat run scripts/deploysquidAgent.ts --network galadriel",
+    "swap": "npx hardhat run scripts/deployAgentSwap.ts --network galadriel",
     "generateStandardJson": "npx hardhat solidity-json"
   },
   "devDependencies": {

@@ -26,6 +26,10 @@ const conversation = (prompt) => {
       endpoint = '/chatwithvision';
       prompt = prompt.replace('/screenshot', '').trim();
     }
+    if (prompt.startsWith('/squid')) {
+      endpoint = '/squidswap';
+      prompt = prompt.replace('/squid', '').trim();
+    }
     console.log(`Sending to endpoint ${endpoint}: ${prompt}`);
     api.post(endpoint, { prompt })
       .then(response => {
