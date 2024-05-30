@@ -16,7 +16,7 @@ router.post('/chat', async (req, res) => {
     console.log('prompt:', prompt);
 
     try {
-        const response = await runAgentWithPrompt(prompt);
+        const response = await runAgentWithPrompt(`${prompt}, reply with a short reply , should be to the point and not more than 3-4 sentences , never send long paraghraphs`);
         res.send(response);
     } catch (error) {
         console.error(`Error running agent: ${error.message}`);
