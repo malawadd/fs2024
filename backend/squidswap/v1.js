@@ -110,7 +110,7 @@ router.post('/squidswap', async (req, res) => {
         const signer = new ethers.Wallet(privateKey, provider);
 
         const squid = new Squid({
-            baseUrl: 'https://v2.api.squidrouter.com',
+            baseUrl: 'https://api.squidrouter.com',
             integratorId: integratorId,
         });
 
@@ -118,19 +118,30 @@ router.post('/squidswap', async (req, res) => {
 
         console.log(fromChainId, ethers.parseUnits(amount.toString(), 18).toString(),fromTokenAddress, toChainId, toTokenAddress,signer.address  )
 
+        // const params = {
+        //     fromAddress: signer.address.toString(),
+        //     fromChain: fromChainId,
+        //     fromToken: fromTokenAddress,
+        //     fromAmount: ethers.parseUnits(amount.toString(), 18).toString(),
+        //     toChain: toChainId,
+        //     toToken: toTokenAddress,
+        //     toAddress: signer.address,
+        //     slippage: 1,
+        //     slippageConfig: {
+        //       autoMode: 1,
+        //     },
+        //   };
+
         const params = {
-            fromAddress: signer.address.toString(),
-            fromChain: fromChainId,
-            fromToken: fromTokenAddress,
-            fromAmount: ethers.parseUnits(amount.toString(), 18).toString(),
-            toChain: toChainId,
-            toToken: toTokenAddress,
+            fromChain: fromChainId, 
+            fromToken: fromTokenAddress, 
+            fromAmount: ethers.parseUnits(amount.toString(), 18).toString(), // 0.1 WETH
+            toChain: toChainId, 
+            toToken: toTokenAddress, 
+            fromAddress: signer.address, 
             toAddress: signer.address,
-            slippage: 1,
-            slippageConfig: {
-              autoMode: 1,
-            },
-          };
+            slippage: 3
+          }
         
           console.log("Parameters:", params);
           
@@ -139,10 +150,11 @@ router.post('/squidswap', async (req, res) => {
         
   // Get the swap route using Squid API
   const routeResult = await getRoute(params);
-  const route = routeResult.data.route;
-  const requestId = routeResult.requestId;
+  console.log(routeResult)
+  const route = routeResult.route;
+//   const requestId = routeResult.requestId;
   console.log("Calculated route:", route);
-  console.log("requestId:", requestId);
+//   console.log("requestId:", requestId);
 
   const transactionRequest = route.transactionRequest;
   const { gasPrice } = await provider.getFeeData();
@@ -183,18 +195,17 @@ router.post('/squidswap', async (req, res) => {
 const getRoute = async (params) => {
     try {
         const integratorId = process.env.SQUID_INTEGRATOR_ID;
-      const result = await axios.post(
-        "https://apiplus.squidrouter.com/v2/route",
-        params,
+      const result = await axios.get(
+        "https://api.squidrouter.com/v1/route",
         {
+            params: params,
           headers: {
             "x-integrator-id": integratorId,
             "Content-Type": "application/json",
           },
         }
       );
-      const requestId = result.headers["x-request-id"]; // Retrieve request ID from response headers
-      return { data: result.data, requestId: requestId };
+      return result.data;
     } catch (error) {
       if (error.response) {
         console.error("API error:", error.response.data);
