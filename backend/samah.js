@@ -5,6 +5,7 @@ const chat = require('./chat');
 const squidswap = require('./squidswap');
 const analysis = require('./analysis');
 const smartswap = require('./smartswap');
+const lilypad = require('./lilypad');
 require('dotenv').config();
 
 
@@ -19,6 +20,7 @@ app.use('/', chat);
 app.use('/', squidswap);
 app.use('/', analysis);
 app.use('/', smartswap);
+app.use('/', lilypad);
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
