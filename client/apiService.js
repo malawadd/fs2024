@@ -34,6 +34,10 @@ const conversation = (prompt) => {
       endpoint = '/analysis';
       prompt = prompt.replace('/analysis', '').trim();
     }
+    if (prompt.startsWith('/ss')) {
+      endpoint = '/smartswap';
+      prompt = prompt.replace('/ss', '').trim();
+    }
     console.log(`Sending to endpoint ${endpoint}: ${prompt}`);
     api.post(endpoint, { prompt })
       .then(response => {
