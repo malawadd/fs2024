@@ -38,6 +38,10 @@ const conversation = (prompt) => {
       endpoint = '/smartswap';
       prompt = prompt.replace('/ss', '').trim();
     }
+    if (prompt.startsWith('/lilypad')) {
+      endpoint = '/lilypad';
+      prompt = prompt.replace('/lilypad', '').trim();
+    }
     console.log(`Sending to endpoint ${endpoint}: ${prompt}`);
     api.post(endpoint, { prompt })
       .then(response => {

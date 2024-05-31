@@ -17,6 +17,7 @@
     "@fleekhq/fleek-storage-js": "^1.0.24",
     "@fleekxyz/sdk": "^1.4.2",
     "compromise": "^14.13.0",
+    "child_process": "^1.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ethers": "^6.12.1",

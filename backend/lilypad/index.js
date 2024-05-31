@@ -1,11 +1,10 @@
 const express = require('express');
-const { Contract, ethers, Wallet } = require('ethers');
-const ABIAgent = require('../abis/Agent.json');
+const { exec } = require('child_process');
 require('dotenv').config();
 
 const router = express.Router();
 
-router.post('/chat', async (req, res) => {
+router.post('/lilypad', (req, res) => {
     const { prompt } = req.body;
 
     if (!prompt) {
@@ -13,97 +12,81 @@ router.post('/chat', async (req, res) => {
         return res.status(400).send('Prompt is required');
     }
 
-    console.log('prompt:', prompt);
+    const command = `lilypad run ollama-pipeline:llama3-8b-lilypad2 -i Prompt='${prompt}' --web3-private-key "${process.env.WEB3_PRIVATE_KEY_LILYPAD}"`;
 
-    try {
-        const response = await runAgentWithPrompt(`${prompt}, reply with a short reply , should be to the point and not more than 3-4 sentences , never send long paraghraphs`);
-        res.send(response);
-    } catch (error) {
-        console.error(`Error running agent: ${error.message}`);
-        res.status(500).send(`Error: ${error.message}`);
-    }
+    console.log('Running command:', command);
+
+    exec(command, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`Error executing command: ${error.message}`);
+            return res.status(500).send(`Error: ${error.message}`);
+        }
+
+        if (stderr) {
+            console.error(`Command stderr: ${stderr}`);
+            return res.status(500).send(`Stderr: ${stderr}`);
+        }
+
+        console.log('Command stdout:', stdout);
+
+        const resultDirMatch = stdout.match(/\/tmp\/lilypad\/data\/downloaded-files\/(\w+)/);
+        if (resultDirMatch) {
+            const resultDir = resultDirMatch[1];
+            const resultFilePath = `/tmp/lilypad/data/downloaded-files/${resultDir}/stdout`;
+
+            console.log('Result directory:', resultDir);
+            console.log('Result file path:', resultFilePath);
+
+            exec(`cat ${resultFilePath}`, (catError, catStdout, catStderr) => {
+                if (catError) {
+                    console.error(`Error reading result file: ${catError.message}`);
+                    return res.status(500).send(`Error: ${catError.message}`);
+                }
+
+                if (catStderr) {
+                    console.error(`Cat stderr: ${catStderr}`);
+                    return res.status(500).send(`Stderr: ${catStderr}`);
+                }
+
+                console.log('Cat stdout:', catStdout);
+
+                try {
+                    const response = extractResponse(catStdout);
+                    console.log('Extracted response:', response);
+                    res.send(response);
+                } catch (extractError) {
+                    console.error(`Error extracting response: ${extractError.message}`);
+                    res.status(500).send(`Error: ${extractError.message}`);
+                }
+            });
+        } else {
+            console.log('Result directory not found in output.');
+            res.status(500).send('Result directory not found in output.');
+        }
+    });
 });
 
-async function runAgentWithPrompt(prompt) {
-    const rpcUrl = process.env.RPC_URL;
-    const privateKey = process.env.PRIVATE_KEY;
-    const contractAddress = process.env.AGENT_CONTRACT_ADDRESS;
 
-    if (!rpcUrl || !privateKey || !contractAddress) {
-        throw new Error('Missing required environment variables');
+
+function extractResponse(catOutput) {
+    console.log('Extracting response from cat output');
+
+    let responseMatch = catOutput.match(/'response':\s*'(.*?)',\s*'done':\s*True/s);
+    if (!responseMatch) {
+        responseMatch = catOutput.match(/'response':\s*"(.*?[^\\])",\s*'done':/s);
     }
 
-    const provider = new ethers.JsonRpcProvider(rpcUrl);
-    const wallet = new Wallet(privateKey, provider);
-    const contract = new Contract(contractAddress, ABIAgent, wallet);
-
-    const maxIterations = 2; // Set the number of iterations to 2
-
-    const transactionResponse = await contract.runAgent(prompt, maxIterations);
-    const receipt = await transactionResponse.wait();
-    console.log(`Task sent, tx hash: ${receipt.transactionHash}`);
-
-    const agentRunID = getAgentRunId(receipt, contract);
-    console.log('agentRunID', agentRunID);
-    if (agentRunID === undefined) {
-        throw new Error('Agent run ID not found in transaction receipt');
+    if (!responseMatch) {
+        throw new Error('Response not found in output.');
     }
 
-    let allMessages = [];
-    while (true) {
-        const newMessages = await getNewMessages(contract, agentRunID, allMessages.length);
-        allMessages = allMessages.concat(newMessages);
+    let response = responseMatch[1];
 
-        if (await contract.isRunFinished(agentRunID)) {
-            break;
-        }
+    response = response.replace(/\\n/g, '\n').replace(/\\'/g, "'").replace(/\\"/g, '"').replace(/\/'/g, "'");
 
-        await new Promise(resolve => setTimeout(resolve, 2000));
-    }
-    console.log(allMessages)
-    const finalResponse = extractResponse(allMessages);
-    return finalResponse;
+    return response;
 }
 
-function getAgentRunId(receipt, contract) {
-    let agentRunID;
-    for (const log of receipt.logs) {
-        try {
-            const parsedLog = contract.interface.parseLog(log);
-            if (parsedLog && parsedLog.name === 'AgentRunCreated') {
-                agentRunID = parsedLog.args[1];
-                if (ethers.BigNumber.isBigNumber(agentRunID)) {
-                    agentRunID = agentRunID.toNumber();
-                }
-                break;
-            }
-        } catch (error) {
-            console.log('Could not parse log:', log);
-        }
-    }
-    return agentRunID;
-}
 
-async function getNewMessages(contract, agentRunID, currentMessagesCount) {
-    const messages = await contract.getMessageHistoryContents(agentRunID);
-    const roles = await contract.getMessageHistoryRoles(agentRunID);
-
-    const newMessages = [];
-    for (let i = currentMessagesCount; i < messages.length; i++) {
-        newMessages.push({
-            role: roles[i],
-            content: messages[i],
-        });
-    }
-    return newMessages;
-}
-
-function extractResponse(messages) {
-    const finalMessage = messages.filter(msg => msg.role === 'assistant').pop();
-    if (!finalMessage) {
-        throw new Error('No final response found from assistant');
-    }
-    return finalMessage.content;
-}
 
 module.exports = router;
