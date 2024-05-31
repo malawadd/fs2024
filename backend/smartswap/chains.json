@@ -1,0 +1,794 @@
+{
+    "chains": [
+        {
+            "axelarChainName": "Ethereum",
+            "networkIdentifier": "ethereum",
+            "chainType": "evm",
+            "rpc": "https://ethereum.publicnode.com",
+            "networkName": "Ethereum",
+            "chainId": "1",
+            "nativeCurrency": {
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/eth.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/eth.svg",
+            "blockExplorerUrls": [
+                "https://etherscan.io/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                "ensRegistry": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0x4F4495243837681061C4743b74B3eEdf548D56A5",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                },
+                "cctp": {
+                    "cctpDomain": 0,
+                    "tokenMessenger": "0xbd3fa81b58ba92a82136038b25adec7066af3155",
+                    "messageTransmitter": "0x0a992d191deec32afe36203ad87d7d289a738f81"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "compliance": {
+                "trmIdentifier": "ethereum"
+            },
+            "estimatedRouteDuration": 960,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": false
+        },
+        {
+            "axelarChainName": "Arbitrum",
+            "networkIdentifier": "arbitrum",
+            "chainType": "evm",
+            "rpc": "https://arb1.arbitrum.io/rpc",
+            "networkName": "Arbitrum",
+            "chainId": "42161",
+            "nativeCurrency": {
+                "name": "Arbitrum",
+                "symbol": "ETH",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/arbitrum.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://s2.coinmarketcap.com/static/img/coins/64x64/11841.png",
+            "blockExplorerUrls": [
+                "https://arbiscan.io/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0xe432150cce91c13a887f7D836923d5597adD8E31",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                },
+                "cctp": {
+                    "cctpDomain": 3,
+                    "tokenMessenger": "0x19330d10D9Cc8751218eaf51E8885D058642E08A",
+                    "messageTransmitter": "0xC30362313FBBA5cf9163F0bb16a0e01f01A896ca"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xEB466342C4d449BC9f53A865D5Cb90586f405215",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "compliance": {
+                "trmIdentifier": "arbitrum"
+            },
+            "estimatedRouteDuration": 1800,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "Avalanche",
+            "networkIdentifier": "avalanche",
+            "chainType": "evm",
+            "rpc": "https://api.avax.network/ext/bc/C/rpc",
+            "networkName": "Avalanche",
+            "chainId": "43114",
+            "nativeCurrency": {
+                "name": "Avalanche",
+                "symbol": "AVAX",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/avalanche.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/avax.svg",
+            "blockExplorerUrls": [
+                "https://avascan.info/blockchain/c/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
+                "ensRegistry": "0xa7eebb2926d22d34588497769889cbc2be0a5d97",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0x5029C0EFf6C34351a0CEc334542cDb22c7928f78",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                },
+                "cctp": {
+                    "cctpDomain": 1,
+                    "tokenMessenger": "0x6b25532e1060ce10cc3b0a99e5683b91bfde6982",
+                    "messageTransmitter": "0x8186359af5f57fbb40c6b14a588d2a59c0c29880"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xfaB550568C688d5D8A52C7d794cb93Edc26eC0eC",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "compliance": {
+                "trmIdentifier": "avalanche_c_chain"
+            },
+            "estimatedRouteDuration": 90,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "optimism",
+            "networkIdentifier": "optimism",
+            "chainType": "evm",
+            "rpc": "https://mainnet.optimism.io",
+            "networkName": "Optimism",
+            "chainId": "10",
+            "nativeCurrency": {
+                "name": "Optimism",
+                "symbol": "ETH",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/optimism.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/op.svg",
+            "blockExplorerUrls": [
+                "https://optimistic.etherscan.io/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0x4200000000000000000000000000000000000006",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0xe432150cce91c13a887f7D836923d5597adD8E31",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                },
+                "cctp": {
+                    "cctpDomain": 2,
+                    "tokenMessenger": "0x2B4069517957735bE00ceE0fadAE88a26365528f",
+                    "messageTransmitter": "0x4d41f22c5a0e5c74090899e5a8fb597a8842b3e8"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xEB466342C4d449BC9f53A865D5Cb90586f405215",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "compliance": {
+                "trmIdentifier": "optimism"
+            },
+            "estimatedRouteDuration": 1800,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "Polygon",
+            "networkIdentifier": "polygon",
+            "chainType": "evm",
+            "rpc": "https://polygon-rpc.com",
+            "networkName": "Polygon",
+            "chainId": "137",
+            "nativeCurrency": {
+                "name": "Polygon",
+                "symbol": "MATIC",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/polygon.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/matic.svg",
+            "blockExplorerUrls": [
+                "https://polygonscan.com/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0x6f015F16De9fC8791b234eF68D486d2bF203FBA8",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                },
+                "cctp": {
+                    "cctpDomain": 7,
+                    "tokenMessenger": "0x9daF8c91AEFAE50b9c0E69629D3F6Ca40cA3B3FE",
+                    "messageTransmitter": "0xF3be9355363857F3e001be68856A2f96b4C39Ba9"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0x750e4C4984a9e0f12978eA6742Bc1c5D248f40ed",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "compliance": {
+                "trmIdentifier": "polygon"
+            },
+            "estimatedRouteDuration": 360,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "base",
+            "networkIdentifier": "base",
+            "chainType": "evm",
+            "rpc": "https://developer-access-mainnet.base.org",
+            "networkName": "Base",
+            "chainId": "8453",
+            "nativeCurrency": {
+                "name": "Base",
+                "symbol": "ETH",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/base.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/axelarnetwork/axelar-satellite/main/public/assets/chains/base.logo.svg",
+            "blockExplorerUrls": [
+                "https://basescan.org/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0x4200000000000000000000000000000000000006",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0x66627F389ae46D881773B7131139b2411980E09E"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0xe432150cce91c13a887f7D836923d5597adD8E31",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                },
+                "cctp": {
+                    "cctpDomain": 6,
+                    "tokenMessenger": "0x1682Ae6375C4E4A97e4B583BC394c861A46D8962",
+                    "messageTransmitter": "0xAD09780d193884d503182aD4588450C416D6F9D4"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xEB466342C4d449BC9f53A865D5Cb90586f405215",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "estimatedRouteDuration": 1800,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "linea",
+            "networkIdentifier": "linea",
+            "chainType": "evm",
+            "rpc": "https://rpc.linea.build",
+            "networkName": "Linea",
+            "chainId": "59144",
+            "nativeCurrency": {
+                "name": "Linea",
+                "symbol": "ETH",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/linea.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/axelarnetwork/axelar-satellite/main/public/assets/chains/linea.logo.svg",
+            "blockExplorerUrls": [
+                "https://lineascan.build/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0xe5D7C2a44FfDDf6b295A15c148167daaAf5Cf34f",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": ""
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0xe432150cce91c13a887f7D836923d5597adD8E31",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xEB466342C4d449BC9f53A865D5Cb90586f405215",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "estimatedRouteDuration": 1800,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "binance",
+            "networkIdentifier": "binance",
+            "chainType": "evm",
+            "rpc": "https://bsc-dataseed.binance.org",
+            "networkName": "BNB Chain",
+            "chainId": "56",
+            "nativeCurrency": {
+                "name": "BNB",
+                "symbol": "BNB",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/binance.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/bnb.svg",
+            "blockExplorerUrls": [
+                "https://bscscan.com/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0x55d398326f99059fF775485246999027B3197955"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0x304acf330bbE08d1e512eefaa92F6a57871fD895",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0x4268B8F0B87b6Eae5d897996E6b845ddbD99Adf3",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "compliance": {
+                "trmIdentifier": "binance_smart_chain"
+            },
+            "estimatedRouteDuration": 150,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "mantle",
+            "networkIdentifier": "mantle",
+            "chainType": "evm",
+            "rpc": "https://rpc.mantle.xyz",
+            "networkName": "Mantle",
+            "chainId": "5000",
+            "nativeCurrency": {
+                "name": "Mantle",
+                "symbol": "MNT",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/mantle.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/wmnt.svg",
+            "blockExplorerUrls": [
+                "https://mantlescan.info/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0x78c1b0C915c4FAA5FffA6CAbf0219DA63d7f4cb8",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0x09bc4e0d864854c6afb6eb9a9cdf58ac190d0df9"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0xe432150cce91c13a887f7D836923d5597adD8E31",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xEB466342C4d449BC9f53A865D5Cb90586f405215",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "estimatedRouteDuration": 900,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "Fantom",
+            "networkIdentifier": "fantom",
+            "chainType": "evm",
+            "rpc": "https://rpc.ankr.com/fantom",
+            "networkName": "Fantom",
+            "chainId": "250",
+            "nativeCurrency": {
+                "name": "FTM",
+                "symbol": "FTM",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/ftm.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/ftm.svg",
+            "blockExplorerUrls": [
+                "https://ftmscan.com/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0x304acf330bbE08d1e512eefaa92F6a57871fD895",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0x1B6382DBDEa11d97f24495C9A90b7c88469134a4",
+                "squidMulticall": "0x9eFbea7CC1a98057459B566E0cd51f25A33FF9D5",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "estimatedRouteDuration": 70,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "Moonbeam",
+            "networkIdentifier": "moonbeam",
+            "chainType": "evm",
+            "rpc": "https://rpc.api.moonbeam.network",
+            "networkName": "Moonbeam",
+            "chainId": "1284",
+            "nativeCurrency": {
+                "name": "Moonbeam",
+                "symbol": "GLMR",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/moonbeam.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/glmr.svg",
+            "blockExplorerUrls": [
+                "https://moonscan.io/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0xAcc15dC74880C9944775448304B263D191c6077F",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0x931715fee2d06333043d11f658c8ce934ac61d0c"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0x4F4495243837681061C4743b74B3eEdf548D56A5",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xCa01a1D0993565291051daFF390892518ACfAD3A",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "estimatedRouteDuration": 120,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "celo",
+            "networkIdentifier": "celo",
+            "chainType": "evm",
+            "rpc": "https://forno.celo.org",
+            "networkName": "Celo",
+            "chainId": "42220",
+            "nativeCurrency": {
+                "name": "CELO",
+                "symbol": "CELO",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/celo.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/celo.svg",
+            "blockExplorerUrls": [
+                "https://celoscan.io/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0x471EcE3750Da237f93B8E339c536989b8978a438",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0x765DE816845861e75A25fCA122bb6898B8B1282a"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0xe432150cce91c13a887f7D836923d5597adD8E31",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xEB466342C4d449BC9f53A865D5Cb90586f405215",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "compliance": {
+                "trmIdentifier": "celo"
+            },
+            "estimatedRouteDuration": 90,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "scroll",
+            "networkIdentifier": "scroll",
+            "chainType": "evm",
+            "rpc": "https://rpc.scroll.io",
+            "networkName": "Scroll",
+            "chainId": "534352",
+            "nativeCurrency": {
+                "name": "Scroll",
+                "symbol": "ETH",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/scroll.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": false,
+            "chainIconURI": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/scroll.svg",
+            "blockExplorerUrls": [
+                "https://scrollscan.com/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0x5300000000000000000000000000000000000004",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": ""
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0xe432150cce91c13a887f7D836923d5597adD8E31",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xEB466342C4d449BC9f53A865D5Cb90586f405215",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "estimatedRouteDuration": 100,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "kava",
+            "networkIdentifier": "kava",
+            "chainType": "evm",
+            "rpc": "https://evm2.kava.io",
+            "networkName": "Kava",
+            "chainId": "2222",
+            "nativeCurrency": {
+                "name": "Kava",
+                "symbol": "KAVA",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/kava.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": true,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/kava.svg",
+            "blockExplorerUrls": [
+                "https://explorer.kava.io/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0xc86c7C0eFbd6A49B35E8714C5f59D99De09A225b",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0xc86c7C0eFbd6A49B35E8714C5f59D99De09A225b"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0xe432150cce91c13a887f7D836923d5597adD8E31",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xEB466342C4d449BC9f53A865D5Cb90586f405215",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c",
+                "squidFeeCollector": "0xd3F8F338FdAD6DEb491F0F225d09422A7a70cc45"
+            },
+            "estimatedRouteDuration": 120,
+            "estimatedBoostRouteDuration": 20,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "filecoin",
+            "networkIdentifier": "filecoin",
+            "chainType": "evm",
+            "rpc": "https://api.node.glif.io",
+            "networkName": "Filecoin",
+            "chainId": "314",
+            "nativeCurrency": {
+                "name": "Filecoin",
+                "symbol": "FIL",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/axelarnetwork/axelar-docs/main/public/images/chains/filecoin.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": false,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/fil.svg",
+            "blockExplorerUrls": [
+                "https://filfox.info/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0x60E1773636CF5E4A227d9AC24F20fEca034ee25A",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "TODO"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0xe432150cce91c13a887f7D836923d5597adD8E31",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0xce16F69375520ab01377ce7B88f5BA8C48F8D666",
+                "defaultCrosschainToken": "0xEB466342C4d449BC9f53A865D5Cb90586f405215",
+                "squidMulticall": "0x4fd39C9E151e50580779bd04B1f7eCc310079fd3"
+            },
+            "compliance": {
+                "trmIdentifier": "filecoin"
+            },
+            "estimatedRouteDuration": 3600,
+            "estimatedBoostRouteDuration": 120,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "blast",
+            "networkIdentifier": "blast",
+            "chainType": "evm",
+            "rpc": "https://rpc.blast.io",
+            "networkName": "Blast",
+            "chainId": "81457",
+            "nativeCurrency": {
+                "name": "Blast",
+                "symbol": "ETH",
+                "decimals": 18,
+                "icon": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/eth.svg"
+            },
+            "swapAmountForGas": "2000000",
+            "sameChainSwapsSupported": false,
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/tokens/blast.svg",
+            "blockExplorerUrls": [
+                "https://blastscan.io/"
+            ],
+            "chainNativeContracts": {
+                "wrappedNativeToken": "0x4300000000000000000000000000000000000004",
+                "ensRegistry": "",
+                "multicall": "0xcA11bde05977b3631167028862bE2a173976CA11",
+                "usdcToken": "0x4300000000000000000000000000000000000003"
+            },
+            "bridges": {
+                "axelar": {
+                    "gateway": "0xe432150cce91c13a887f7D836923d5597adD8E31",
+                    "itsService": "0xB5FB4BE02232B1bBA4dC8f81dc24C26980dE9e3C"
+                }
+            },
+            "squidContracts": {
+                "squidRouter": "0x492751eC3c57141deb205eC2da8bFcb410738630",
+                "defaultCrosschainToken": "0xEB466342C4d449BC9f53A865D5Cb90586f405215",
+                "squidMulticall": "0xEa749Fd6bA492dbc14c24FE8A3d08769229b896c"
+            },
+            "estimatedRouteDuration": 1800,
+            "estimatedBoostRouteDuration": 120,
+            "enableBoostByDefault": true
+        },
+        {
+            "axelarChainName": "noble",
+            "networkIdentifier": "noble",
+            "chainType": "cosmos",
+            "rpc": "https://noble-rpc.polkachu.com",
+            "rest": "https://noble-api.polkachu.com",
+            "networkName": "Noble",
+            "chainId": "noble-1",
+            "nativeCurrency": {
+                "name": "USD Coin",
+                "symbol": "USDC",
+                "decimals": 6,
+                "icon": "https://raw.githubusercontent.com/cosmos/chain-registry/master/noble/images/stake.png"
+            },
+            "swapAmountForGas": "2000000",
+            "chainIconURI": "https://raw.githubusercontent.com/0xsquid/assets/main/images/providers/noble.svg",
+            "blockExplorerUrls": [
+                "https://mintscan.io/noble/"
+            ],
+            "stakeCurrency": {
+                "coinDenom": "STAKE",
+                "coinMinimalDenom": "ustake",
+                "coinDecimals": 6,
+                "coingeckoId": "stake"
+            },
+            "bip44": {
+                "coinType": 118
+            },
+            "bech32Config": {
+                "bech32PrefixAccAddr": "noble",
+                "bech32PrefixAccPub": "noblepub",
+                "bech32PrefixValAddr": "noblevaloper",
+                "bech32PrefixValPub": "noblevaloperpub",
+                "bech32PrefixConsAddr": "noblevalcons",
+                "bech32PrefixConsPub": "noblevalconspub"
+            },
+            "currencies": [
+                {
+                    "coinDenom": "USDC",
+                    "coinMinimalDenom": "uusdc",
+                    "coinDecimals": 6,
+                    "coingeckoId": "usd-coin"
+                }
+            ],
+            "feeCurrencies": [
+                {
+                    "coinDenom": "USDC",
+                    "coinMinimalDenom": "uusdc",
+                    "coinDecimals": 6,
+                    "coingeckoId": "usd-coin"
+                }
+            ],
+            "coinType": 118,
+            "gasPriceStep": {
+                "low": 0,
+                "average": 0,
+                "high": 0.025
+            },
+            "features": [
+                "ibc-transfer",
+                "ibc-go",
+                "packet-forward-middleware"
+            ],
+            "squidContracts": {
+                "defaultCrosschainToken": "uausdc"
+            },
+            "bridges": {
+                "axelar": {},
+                "cctp": {
+                    "cctpDomain": 4
+                },
+                "ibc": {
+                    "osmosis-1": "channel-1",
+                    "dydx-mainnet-1": "channel-33"
+                }
+            },
+            "chainToAxelarChannelId": "",
+            "estimatedRouteDuration": 180,
+            "enableBoostByDefault": false,
+            "sameChainSwapsSupported": false,
+            "estimatedBoostRouteDuration": 20
+        }
+    ]
+}
