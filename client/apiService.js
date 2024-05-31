@@ -42,6 +42,7 @@ const conversation = (prompt) => {
       endpoint = '/lilypad';
       prompt = prompt.replace('/lilypad', '').trim();
     }
+    
     console.log(`Sending to endpoint ${endpoint}: ${prompt}`);
     api.post(endpoint, { prompt })
       .then(response => {
