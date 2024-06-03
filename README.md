@@ -49,7 +49,7 @@ swap {amount} {fromToken} to {toToken} from {fromChain} to {toChain}
 Example: `/squid swap 1 FIL to USDC from Filecoin to Ethereum`. Samah handles the rest, ensuring a smooth transaction.
 
 **Smart Swaps:**  
-Unsure about the best trading strategy? Let Samah analyze your chat and suggest smart swaps tailored to your needs. Simply use the command `/ss` and let the AI do the heavy lifting. Example: `/ss swap 3 MATIC to USDC on Polygon`.
+Unsure about the best trading strategy? Let Samah analyze your chat and suggest smart swaps tailored to your needs. Simply use the command `/ss` and let the AI do the heavy lifting. Example: `/ss trade my 1 matci on ploygon for usdt`.
 
 <h1 align="center">
   <br>
