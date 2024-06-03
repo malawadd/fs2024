@@ -61,8 +61,6 @@ Unsure about the best trading strategy? Let Samah analyze your chat and suggest 
 **Beryx API Integration:**  
 Get the most out of blockchain data with Samah’s access to the Beryx API. Whether you need the latest updates or specific blockchain queries, Samah can fetch the information for you. Start the chat with the command `/beryx`, and run queries. Example: `/beryx what's the latest tipset?`
 
-**Lilypad Integration:**  
-To work with Lilypad, start the chat with `/lilypad`. Currently, only the chat functionality is supported.
 
 ### How to Get Started
 
@@ -75,8 +73,6 @@ To work with Lilypad, start the chat with `/lilypad`. Currently, only the chat f
 **Note for Linux Users:**  
 To enable screenshot functionality, install ImageMagick with the command: `apt-get install imagemagick`.
 
-**Note for Windows Users:**  
-Lilypad only runs on WSL. Move the Lilypad server to WSL and run it from there. Additionally, change the API endpoint in the [client](https://github.com/malawadd/fs2024/blob/2693ef83fe185665a7c17cd265f6cbde729983ae/client/apiService.js#L42) from `/lilypad` to `http://localhost:3400/lilypad`.
 
 **Client Setup:**
 1. Navigate to the client directory.
@@ -90,4 +86,3 @@ Lilypad only runs on WSL. Move the Lilypad server to WSL and run it from there. 
 - **Squid Router:** Creates unlimited access for anything in crypto.
 - **Beryx:** A dynamic web platform for developers working with blockchain technologies, particularly focusing on the Filecoin blockchain.
 - **Fleek:** Provides essential tools for developers who want to build on a fully decentralized stack.
-- **Lilypad:** Transforms AI by making distributed compute accessible.
